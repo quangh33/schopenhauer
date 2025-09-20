@@ -47,3 +47,22 @@ No, algorithms like Stochastic Gradient Descent (SGD) and Mini-batch Gradient De
 1. reduce the degree of polynomial model
 2. regularize the model using Ridge or Lasso
 3. increase traning set size
+
+#### 7. Suppose you are using Ridge Regression and you notice that the training error and the validation error are almost equal and fairly high. Would you say that the model suffers from high bias or high variance? Should you increase the regularization hyperparameter α or reduce it?
+- high bias or underfitting
+- should reduce alpha because the model is penaltizing the weight too much.
+
+#### 8. Why would you want to use:
+##### a. Ridge Regression instead of plain Linear Regression (i.e., without any regularization)?
+- when some features are highly correlated => Ridge Regression helps to distribute the weight evently.
+##### b. Lasso instead of Ridge Regression?
+- Lasso uses l1 panelty, which can reduce the weight to zero => can eliminate unrelevant features. If you are sure that only a few features matter, use Lasso.
+##### c. Elastic Net instead of Lasso?
+- Lasso can't deal with data with highly correlated features
+
+#### 9. How do you interpret coefficient of a linear regression model
+The coefficients in a linear regression model provide insights into the `strength and direction` of the relationship between the input features and the target variable.
+It represents the average change in the target variable Y for a one-unit increase in the predictor X_i
+
+
+
