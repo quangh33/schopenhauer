@@ -64,5 +64,21 @@ No, algorithms like Stochastic Gradient Descent (SGD) and Mini-batch Gradient De
 The coefficients in a linear regression model provide insights into the `strength and direction` of the relationship between the input features and the target variable.
 It represents the average change in the target variable Y for a one-unit increase in the predictor X_i
 
+#### 10. How do you measure the strength of a linear relationship between two variables?
+- Pearson's product-moment correlation coefficient
+- Value ranges from -1 to 1, with -1 indicating a perfect negative linear relationship, 0 indicating no linear relationship, and 1 indicating a perfect positive linear relationship.
+  
+<img width="315" height="72" alt="image" src="https://github.com/user-attachments/assets/8f6805c3-80e5-48c4-95b2-246a32be7f34" />
 
+```
+import pandas as pd
+import plotly.express as px
+
+file_path = '/content/drive/My Drive/Colab Notebooks/chicago_taxi_train.csv'
+data = pd.read_csv(file_path)
+
+training_df = data.loc[:, ('TRIP_MILES', 'TRIP_SECONDS', 'FARE', 'COMPANY', 'PAYMENT_TYPE', 'TIP_RATE')]
+training_df.corr(numeric_only = True)
+px.scatter_matrix(training_df, dimensions=["FARE", "TRIP_MILES", "TRIP_SECONDS"])
+```
 
